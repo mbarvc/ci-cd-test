@@ -1,0 +1,20 @@
+stages: #^ Propiedad Principal donde definimos los stages (pasos) que se ejecutaran en el pipeline
+  - build
+  - test
+  - deploy
+
+build: #^ Stage 1, aca se pede definir el nombre del stage, se puede poner cualquier nombre
+  stage: build # Propiedad que indica el stage al que pertenece
+  script: # Propiedad que indica los comandos a ejecutar
+    - echo "Building the application"
+
+test: #^ Stage 2, aca se pede definir el nombre del stage, se puede poner cualquier nombre
+  stage: test # Propiedad que indica el stage al que pertenece
+  script: # Propiedad que indica los comandos a ejecutar
+    - echo "Testing the application"
+
+deploy: #^ Stage 3, aca se pede definir el nombre del stage, se puede poner cualquier nombre
+  stage: deploy # Propiedad que indica el stage al que pertenece
+  script: # Propiedad que indica los comandos a ejecutar
+    - echo "Deploying the application"
+    a 
