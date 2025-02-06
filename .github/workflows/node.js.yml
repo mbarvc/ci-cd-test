@@ -13,7 +13,8 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x, 22.x]
+        # node-version: [18.x, 20.x, 22.x] #^ Se pueden poner muchas versiones de node y compilan en paralelo
+        node-version: [22.x]
 
     steps:
       #^ EL guión "-" indica que es un paso
