@@ -18,18 +18,16 @@ jobs:
     steps:
       #^ EL guión "-" indica que es un paso
       - uses: actions/checkout@v4 #^ Este paso es para clonar el repositorio
+      - uses: actions/setup-node@v4 #^ Este paso es para configurar node
+        with:
+          cache: "npm" #^ Propiedad que indica que se va a cachear las dependencias de npm
+      - run: npm ci --legacy-peer-deps --no-fund --no-audit
+      - run: npm run lint
+      - run: npm run test
+      - run: npm run build
       - name: "Hello World mtn"
         run: echo "Hello World mtn !!!"
       - name: "Fecha y Hora"
         run: date
       - name: "Listar directorio"
         run: ls -la
-
-      # - uses: actions/checkout@v4
-      # - uses: actions/setup-node@v4
-      #   with:
-      #     cache: "npm"
-      # - run: npm ci --legacy-peer-deps --no-fund --no-audit
-      # - run: npm run lint
-      # - run: npm run test
-      # - run: npm run build
