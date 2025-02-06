@@ -1,14 +1,14 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Platzi CI - mtn
+name: MTN CI #^ Nombre del workflow, se puede poner cualquier nombre
 
 on:
   push:
     branches: ["develop"]
 
 jobs:
-  platzi: #^ Stage 1, aca se pede definir el nombre del stage, se puede poner cualquier nombre
+  build-mtn: #^ Job 1, aca se pede definir el nombre del job, se puede poner cualquier nombre
     runs-on: ubuntu-latest #^ Propiedad que indica el sistema operativo en el que se ejecutara el job, No es buena practica poner el latest, se debe poner la version especifica
 
     # strategy:
@@ -18,6 +18,11 @@ jobs:
     steps:
       - name: "Hello World mtn"
         run: echo "Hello World mtn !!!"
+      - name: "Fecha y Hora"
+        run: date
+      - name: "Listar directorio"
+        run: ls -la
+
       # - uses: actions/checkout@v4
       # - uses: actions/setup-node@v4
       #   with:
