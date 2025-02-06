@@ -23,7 +23,7 @@ jobs:
         with:
           cache: "npm" #^ Propiedad que indica que se va a cachear las dependencias de npm
       - run: npm ci --legacy-peer-deps --no-fund --no-audit
-      - run: npm run lint
+      - run: npm run lint -- --fix
       - run: npm run test
       - run: npm run build
       - name: "Hello World mtn"
