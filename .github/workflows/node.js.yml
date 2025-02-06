@@ -11,9 +11,9 @@ jobs:
   build-mtn: #^ Job 1, aca se pede definir el nombre del job, se puede poner cualquier nombre
     runs-on: ubuntu-latest #^ Propiedad que indica el sistema operativo en el que se ejecutara el job, No es buena practica poner el latest, se debe poner la version especifica
 
-    # strategy:
-    #   matrix:
-    #     node-version: [18.x, 20.x, 22.x]
+    strategy:
+      matrix:
+        node-version: [10.x, 18.x, 20.x, 22.x]
 
     steps:
       #^ EL guión "-" indica que es un paso
