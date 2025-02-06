@@ -6,6 +6,12 @@ name: MTN CI #^ Nombre del workflow, se puede poner cualquier nombre
 on:
   push:
     branches: ["develop"]
+  pull_request:
+    branches: ["main"]
+
+concurrency: #^ Propiedad que indica que se va a ejecutar una sola vez, que solo se ejecutan los workflows que queremos.
+  group: mtn-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-mtn: #^ Job 1, aca se pede definir el nombre del job, se puede poner cualquier nombre
